@@ -106,7 +106,7 @@ You can even change the background color by setting the background color
 For the documentation explaining all the options the turtle library provides look [here](https://docs.python.org/3/library/turtle.html#). Like many python projects, turtle is well-documented.
 
 
-The solution can be found [here](https://github.com/Durham-Hackathon/durham-hackathon/code/step4-sol.py)
+Fancy a hint? You can find the solution [here](code/step4-sol.py).
 
 
 

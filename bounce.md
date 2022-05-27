@@ -98,7 +98,7 @@ You will need to know the location of the floor as well. At the top you will see
 
 To test these you need to modify the starting velocity which is currently set to 0 in x and y directions.
 
-The solution can be found [here](https://github.com/Durham-Hackathon/durham-hackathon/code/step3-sol.py)
+Fancy a hint? You can find the solution [here](code/step3-sol.py).
 
 [Next step](/durham-hackathon/many-balls.html)
 

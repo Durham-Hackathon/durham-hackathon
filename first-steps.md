@@ -2,7 +2,7 @@
 layout: default
 ---
 
-##  What happens when we drop an elastic ball?
+##  How to drop a ball
 
 Imagine a ball of mass $$m$$ and the goal to simulate and visualize its free fall with Python.
 
@@ -73,8 +73,7 @@ while True:
 </body> 
 
 </html> 
-Fancy a hint? You can find the solution [here](https://github.com/Durham-Hackathon/durham-hackathon/code/step1-sol.py).
-<!--Fancy a hint? You can find the solution [here](code/step1-sol.py).-->
+Fancy a hint? You can find the solution [here](code/step1-sol.py).
 
 Since we are arbitrarily fantasising the speed of the ball, this is indeed not a physical *simulation* but just an *animation*. Let's try to figure out how the ball should actually move!
 

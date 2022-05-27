@@ -5,75 +5,26 @@ layout: default
 [Previous step](/durham-hackathon/first-steps.html)
 
 
-## A first simulation: What happens when we drop an elastic ball?
+## How to drop a ball *for real*
 
-Recall Newton's first law:
+The *equations of motion* are a set of formulas that enable us to describe the movement of an object. An object in free fall simply moves along a straight line since it is only driven by earth's gravitational force that accelerates the object by means of the  earth's gravitational constant $$g \sim 9.81 \frac{m}{s^2}$$. Therefore, we only need to consider the equations of motion for linear motion with constant acceleration.
 
-$$F=m\cdot a.$$
+To describe the motion of an object, we consider the following values:
+- the initial velocity $$u$$ 
+- the constant acceleration $$a$$, in our case, $$a = g$$
+- a time $$t$$, meaning, the duration of the motion
+- a distance $$x$$, meaning, how far the object moves
 
-Can we use this to find out how the ball will move?
+Based thereon, we can compute the distance $$s$$ that an object travels in a certain amount of time $$t$$ as follows:
+$$x = v \cdot t$$
 
-### Forces
-What is $$F$$? This is the force acting on the ball. For now let's assume that is only gravity, so:
+As you can see, this requires us to know the velocity $$v$$ of the object. For linear motions with constant accleration, $$v$$ can be computed as follows:
+$$v = u + a \cdot t$$
 
-$$ F = m\cdot g,$$
+Or, in the case of free fall:
+$$v = u + g \cdot t$$
 
-where $$g \sim 9.81 \frac{m}{s^2}$$ is earth's gravitational constant.
-
-Inserting this gives
-
-$$g\cdot m = m \cdot a$$
-
-or in other words
-
-$$ g = a. $$
-
-
-### Acceleration
-What is $$a$$? This is the acceleration of our object. The acceleration depends on time, so we write $$a(t)$$ to denote the acceleration at time $$t$$.
-
-We know that acceleration is just a change of velocity, so
-$$ a(t) = \frac{d}{dt} v(t).$$
-Similarily, we know that velocity is just a change in velocity, so
-$$v(t) = \frac{d}{dt} x(t).$$
-
-This type of equation, in which we need to solve for a derivative is called an ordinary differential equation (ODE).
-They are extremely common throughout physics and engineering and solving them quickly is very useful.
-
-Sometimes (such as here) an ODE can be solved by hand, but in many other cases that is not possible.
-In these cases we can try to find the solution approximately using a numerical simulation.
-
-The derivative is defined as:
-
-$$\frac{d}{dt} f(t) =\lim_{h->0} \frac{f(t+h) - f(t)}{h}$$
-
-So we should let $h$ tend to zero, but what happens if we just choose a small h instead?
-
-We get an approximation of the true derivative that we can easily calculate, after all we know all the quantities on the right side of the equation.
-
-There is a lot of mathematical theory concerned with how big we can safely choose $$h$$ (stability) and what size of error we are making (convergence).
-We will ignore all this for now and go back to our two equations and insert this approximation:
-
-$$ g = a(t) = \frac{d}{dt} v(t) \sim \frac{v(t+h) + v(t)}{h}$$
-
-This is equivalent to:
-
-$$v(t+h) \sim v(t) + h \cdot g$$
-
-So if we know the velocity and acceleration at time $$t$$ we can now compute it at a slightly later time. Rinse. Repeat.
-This will give us the velocity at all future times.
-
-The same thing works for the position of the ball:
-
-$$v(t) = \frac{d}{dt} x(t) \sim \frac{x(t+h) - x(t)}{h}$$
-
-And reforming:
-
-$$x(t+h) \sim x(t) + h\cdot v(t).$$
-
-Note that we need the velocity in order to compute the position.
-
-Now let's rewrite the code for the falling ball from above with correct physics:
+Now let's rewrite the code for the falling ball from the previous step with correct physics:
 
 <html> 
 <head> 
@@ -143,6 +94,8 @@ while True:
 
 </html>
 
-The solution can be found [here](https://github.com/Durham-Hackathon/durham-hackathon/code/step2-sol.py)
+Fancy a hint? You can find the solution [here](code/step2-sol.py).
+
+Want to know where all these equations actually come frome? Take a look [here](/durham-hackathon/motion-equations.html)
 
 [Next step](/durham-hackathon/bounce.html)

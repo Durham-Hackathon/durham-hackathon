@@ -7,7 +7,7 @@ h help:
 
 install:
 	bundle config --local path vendor/bundle
-	bundle install
+	bundle install --full-index
 
 build:
 	JEKYLL_ENV=production bundle exec jekyll build --trace
