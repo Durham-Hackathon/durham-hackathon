@@ -4,18 +4,19 @@ layout: default
 
 ##  What happens when we drop an elastic ball?
 
-We've got a ball (of mass m).
-We'll try to simulate it using the python library turtle.
+Imagine a ball of mass $$m$$ and the goal to simulate and visualize its free fall with Python.
 
-The code below will give you a "ball" object.
-In the loop try to modify the position of the ball so it begins to fall.
+The Python code below uses the graphics library turtle to draw a `ball`.
+`ball` is a turtle object and can be configured with the help of the `color()` and `shape()` methods.
+Further, our `ball` object has got a method `ball.ycor()` that returns its current position along the $$y$$-axis, which we imagine as the balls height above the floor. 
+Other from that, the code contains an infinite loop `while True:` that is used to draw our `ball` over and over again.
 
-You will need only two python functions:
-1. `ball.sety(val)` sets the position of ball to `val`
-1. `ball.ycor()` gets the current position of ball
-
-Both of these functions are for the y-coordinate of the ball.
-The same functions exist for the x-coordinate, but we don't need those so far.
+Let's give it a try and drop our digital ball! In the infinite loop, try to modify the position of the `ball` so it begins to fall:
+1. Use `ball.sety(val)` to set the $$y$$-position of `ball` to a value `val`
+2. Use `ball.ycor()` to get the current $$y$$-position of `ball`
+3. Combine both steps to animate the `ball`
+4. What happens if you experiment with different values `val`?
+5. How close is your animation to reality?
 
 <html> 
 <head> 
@@ -35,8 +36,6 @@ function builtinRead(x) {
     return Sk.builtinFiles["files"][x];
 }
 
-
-
 function runit() {
    var prog = document.getElementById("firststeps").value; 
    Sk.configure({read:builtinRead}); 
@@ -55,7 +54,8 @@ function runit() {
 
 <h3>First Steps:</h3> 
 <form> 
-<textarea id="firststeps" cols="60" rows="12">import turtle
+<textarea id="firststeps" cols="60" rows="12" onkeydown="if(event.keyCode===9){var v=this.value,s=this.selectionStart,e=this.selectionEnd;this.value=v.substring(0, s)+'\t'+v.substring(e);this.selectionStart=this.selectionEnd=s+1;return false;}">
+import turtle
 
 ball = turtle.Turtle()
 ball.penup()
@@ -63,7 +63,7 @@ ball.color("red")
 ball.shape("circle")
 
 while True:
-    #TODO: Place your code here
+    #TODO: Drop the ball by inserting your code below
 </textarea><br /> 
 <button type="button" onclick="runit()">Run</button> 
 </form>
@@ -73,9 +73,10 @@ while True:
 </body> 
 
 </html> 
-If you want you can have a look a the solution [here](https://github.com/Durham-Hackathon/durham-hackathon/code/step1-sol.py).
+Fancy a hint? You can find the solution [here](https://github.com/Durham-Hackathon/durham-hackathon/code/step1-sol.py).
+<!--Fancy a hint? You can find the solution [here](code/step1-sol.py).-->
 
-This "simulation" is not very physical so let's try to figure out how the ball should actually move.
+Since we are arbitrarily fantasising the speed of the ball, this is indeed not a physical *simulation* but just an *animation*. Let's try to figure out how the ball should actually move!
 
 [Next step](/durham-hackathon/newton.html)
 
