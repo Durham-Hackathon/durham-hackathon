@@ -4,26 +4,33 @@ layout: default
 
 ##  Getting on
 
-Setup gh webpage - mini python webpage
-0. Get GitHub account
-1. Go to https://github.com/Durham-Hackathon/durham-hackathon
-2. Click on fork upper righthand corner
-3. Settings -> Pages
-4. Source: None -> gh-pages -> save -> wait
-5. Click on url to visit your webpage
-6. Check Actions to see error messages
+Got hooked? If you fancy your own GitHub webpage that allows you to programme Python in the browser, we've got something for you:
 
-Edit content on webpage (to save your code):
-1. Code
-2. Layout and configuration are in the folders
-3. Only edit markdown .md files
-4. To persist your code
-5. To paste your code in the my-python-code.md file
-6. Click on the file -> "Edit this file"
-7. Click "Commit changes"
-8. Wait for the website to be generated
+0. Get your GitHub account at https://github.com/
+1. Go to https://github.com/Durham-Hackathon/template-website
+2. In the upper right corner, click on `fork`
+3. In the forked repo, go to `Settings` → `Pages`
+4. Change the `Source`: `None` → `gh-pages` → `save`
+5. Your website will now be built. You may need to wait for a while for it to be available. 
+6. Click on the link at the top of the `Settings` page to visit your webpage. 
+7. In case your website is not yet deployed, you may want to check for error messages by clicking on Actions and expanding.
 
-Link to Jekyll docs change themes and colours
-Link to github markdown, e.g. to add pics
+In order to edit the content on your webpage or to persist your code:
+1. Write and test your code in the browser
+2. Go to your fork of the template-website
+3. Click on `index.md` to open it
+4. In the upper right corner, click on the pen to edit the file
+5. To persist your code, add it between the HTML tags of the textarea `id=yourcode`
+6. On the bottom of the page, click `Commit changes`
+7. Wait for the website to be generated
+
+To change the content of your webpage, you should only need to change and add Markdown files, meaning, the files with an .mdending.
+Therefore, please only change the .yml configuration file if you know what you are doing :-) 
+
+Fancy different themes and colours? The [Jekyll documentation](https://jekyllrb.com/docs/) will teach you how to do that.
+
+This short tutorial on [github markdown](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax) will teach you how to write new content, e.g. to add pictures.
+
+This theme is called architect, you can find configuration options for it [here](https://github.com/pages-themes/architect).
 
 
