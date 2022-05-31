@@ -4,9 +4,9 @@ layout: default
 
 [Previous step](/durham-hackathon/bounce.html)
 
-## Improving the simulation: Can we add more balls?
+## How to bounce a whole lot of balls
 
-Of course we can. We only need an extra loop that runs over all the balls.
+Can we simulate many balls? Of course we can. We only need an extra loop that runs over all the balls.
 
 We should then check if they have collided and bounce back if they have.
 

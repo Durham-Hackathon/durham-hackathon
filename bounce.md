@@ -4,7 +4,7 @@ layout: default
 
 [Previous step](/durham-hackathon/newton.html)
 
-## Improving the simulation: What happens when we reach the floor?
+## How to bounce a ball
 
 Next let's simulate what happens when we hit the floor. What we expect is that the ball (if it is perfectly elastic) will bounce back up. In a perfectly elastic collision no energy is lost, that's not entirely realistic but it is where we will start.
 
