@@ -9,22 +9,27 @@ layout: default
 
 The *equations of motion* are a set of formulas that enable us to describe the movement of an object. An object in free fall simply moves along a straight line since it is only driven by earth's gravitational force that accelerates the object by means of the  earth's gravitational constant $$g \sim 9.81 \frac{m}{s^2}$$. Therefore, we only need to consider the equations of motion for linear motion with constant acceleration.
 
-To describe the motion of an object, we consider the following values:
+To describe the motion of an object in free fall, we consider the following values:
 - the initial velocity $$u$$ 
-- the constant acceleration $$a$$, in our case, $$a = g$$
+- the constant acceleration $$g$$
 - a time $$t$$, meaning, the duration of the motion
-- a distance $$x$$, meaning, how far the object moves
+- a distance $$s$$, meaning, how far the object moves
 
 Based thereon, we can compute the distance $$s$$ that an object travels in a certain amount of time $$t$$ as follows:
-$$x = v \cdot t$$
 
-As you can see, this requires us to know the velocity $$v$$ of the object. For linear motions with constant accleration, $$v$$ can be computed as follows:
-$$v = u + a \cdot t$$
+$$s = v \cdot t$$
 
-Or, in the case of free fall:
+As you can see, this requires us to know the velocity $$v$$ of the object. For a linear motion with constant accleration, $$v$$ can be computed as follows:
+
 $$v = u + g \cdot t$$
 
-Now let's rewrite the code for the falling ball from the previous step with correct physics:
+To rewrite the code for the falling ball from the previous step with correct physics, you might want to follow these steps:
+1. Set $$t$$ to a small value to define one timestep of the simulation
+2. Compute the velocity $$v$$ using the formula above
+3. Compute the new position by adding the travelled distance $$s$$ to the current position
+4. Congrats! This is one timestep of your simulation.
+
+Since this is executed in an infinite loop, the simulation is already complete :-) 
 
 <html> 
 <head> 
@@ -72,9 +77,14 @@ function runit() {
 <textarea id="newton-code" cols="40" rows="15" onkeydown="if(event.keyCode===9){var v=this.value,s=this.selectionStart,e=this.selectionEnd;this.value=v.substring(0, s)+'\t'+v.substring(e);this.selectionStart=this.selectionEnd=s+1;return false;}">
 import turtle
 
-gravity = 9.81
-h = 0.008
-v = 0 # Starting velocity
+# Earth's gravitational constant
+g = 9.81
+
+# Timestep size
+t = 0.008
+
+# Starting velocity
+u = 0 
 
 ball = turtle.Turtle()
 ball.penup()
@@ -82,11 +92,13 @@ ball.color("red")
 ball.shape("circle")
 
 while True:
-    # Add your code here
+	#TODO: Drop the ball by replacing "break" with your own code
+	break;
 </textarea><br /> 
 <button type="button" onclick="runit()">Run</button> 
 </form> 
-<pre id="newton-output" ></pre> 
+
+<div id="newton-output" ></div> 
 <!-- If you want turtle graphics include a canvas -->
 <div id="newton-canvas"></div> 
 

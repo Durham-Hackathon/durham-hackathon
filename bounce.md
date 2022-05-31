@@ -73,10 +73,10 @@ ball.color("red")
 ball.shape("circle")
 
 while True:
-    # Add your code here
-    vy = vy + h*gravity
-    y = ball.ycor() + h*vy
-    ball.sety(y)
+	#TODO: Bounce the ball by adding your own code
+    	vy = vy + h*gravity
+    	y = ball.ycor() + h*vy
+    	ball.sety(y)
 </textarea><br /> 
 <button type="button" onclick="runit()">Run</button> 
 </form> 

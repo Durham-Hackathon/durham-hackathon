@@ -63,7 +63,8 @@ ball.color("red")
 ball.shape("circle")
 
 while True:
-    #TODO: Drop the ball by inserting your code below
+	#TODO: Drop the ball by replacing "break" with your own code
+	break;
 </textarea><br /> 
 <button type="button" onclick="runit()">Run</button> 
 </form>
