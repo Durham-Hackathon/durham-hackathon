@@ -7,3 +7,4 @@ ball.shape("circle")
 
 while True:
     ball.sety(ball.ycor() - 1)
+

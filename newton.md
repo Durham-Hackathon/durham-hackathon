@@ -77,19 +77,19 @@ function runit() {
 <textarea id="newton-code" cols="40" rows="15" onkeydown="if(event.keyCode===9){var v=this.value,s=this.selectionStart,e=this.selectionEnd;this.value=v.substring(0, s)+'\t'+v.substring(e);this.selectionStart=this.selectionEnd=s+1;return false;}">
 import turtle
 
+ball = turtle.Turtle()
+ball.penup()
+ball.color("red")
+ball.shape("circle")
+
 # Earth's gravitational constant
-g = 9.81
+g = -9.81
 
 # Timestep size
 t = 0.008
 
 # Starting velocity
-u = 0 
-
-ball = turtle.Turtle()
-ball.penup()
-ball.color("red")
-ball.shape("circle")
+u = 0
 
 while True:
 	#TODO: Drop the ball by replacing "break" with your own code

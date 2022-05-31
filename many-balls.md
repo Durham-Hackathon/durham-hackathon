@@ -8,6 +8,7 @@ layout: default
 
 Of course we can. We only need an extra loop that runs over all the balls.
 
+We should then check if they have collided and bounce back if they have.
 
 <html> 
 <head> 
@@ -53,27 +54,67 @@ function runit() {
 <form> 
 <textarea id="bounce-code" cols="40" rows="15" onkeydown="if(event.keyCode===9){var v=this.value,s=this.selectionStart,e=this.selectionEnd;this.value=v.substring(0, s)+'\t'+v.substring(e);this.selectionStart=this.selectionEnd=s+1;return false;}">
 import turtle
+import random
 
+# We will need the edges of our box, so we set them
 width = 300
 height = 400
 window = turtle.Screen()
 window.setup(width, height)
+window.tracer(0)
 
-gravity = -9.81
-h = 0.08
-vx = 0 # Starting velocity in x direction
-vy = 0 # Starting velocity in y direction
+color = ["blue",
+        "yellow",
+        "red",
+        "darkgreen", 
+        "cyan", 
+        "violet",
+        "magenta",
+        "orange",
+        "purple", 
+        "navy", 
+        "brown", 
+        "maroon",
+        "turquoise", 
+        "lightgreen", 
+        "green", 
+        "skyblue", 
+        "black", 
+        "gold",
+        "gray"]
 
-ball = turtle.Turtle()
-ball.penup()
-ball.color("red")
-ball.shape("circle")
+N = 10 # Number of balls
+balls = [] # A list to hold the balls
+
+# Set up N balls and start them in random positions
+for i in range(N):
+    balls.append(turtle.Turtle())
+    balls[i].penup()
+    balls[i].shape("circle")
+    balls[i].color(color[i%len(color)])
+
+    # Set random starting position
+    balls[i].setx(random.randint(0,height / 4))
+    balls[i].sety(random.randint(0,height / 4))ball = turtle.Turtle()
+
+# Earth's gravitational constant
+g = -9.81
+
+# Timestep size
+t = 0.008
+
+# Starting velocity is now also a list, we need one velocity per ball
+ux = []
+uy = []
+for i in range(N):
+    ux.append(0)
+    uy.append(0)
 
 while True:
-    # Add your code here
-    vy = vy + h*gravity
-    y = ball.ycor() + h*vy
-    ball.sety(y)
+    for i in range(N):
+        break;
+        window.update()
+    break;
 </textarea><br /> 
 <button type="button" onclick="runit()">Run</button> 
 </form> 

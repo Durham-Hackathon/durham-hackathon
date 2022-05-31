@@ -1,15 +1,12 @@
 import turtle
 import random
 
+# We will need the edges of our box, so we set them
 width = 300
 height = 400
 window = turtle.Screen()
 window.setup(width, height)
 window.tracer(0)
-
-N = 10 # Number of balls
-balls = []
-velocities = []
 
 color = ["blue",
         "yellow",
@@ -31,6 +28,10 @@ color = ["blue",
         "gold",
         "gray"]
 
+N = 2 # Number of balls
+balls = [] # A list to hold the balls
+
+# Set up N balls and start them in random positions
 for i in range(N):
     balls.append(turtle.Turtle())
     balls[i].penup()
@@ -41,33 +42,43 @@ for i in range(N):
     balls[i].setx(random.randint(0,height / 4))
     balls[i].sety(random.randint(0,height / 4))
 
-    # Set random starting velocities
-    velocities.append([random.randint(-width/10,width/10),0])
+# Earth's gravitational constant
+g = -9.81
 
+# Timestep size
+t = 0.008
 
-gravity = -9.81
-Delta_t = 0.008
-i = 0
+# Starting velocity is now also a list, we need one velocity per ball
+ux = []
+uy = []
+for i in range(N):
+    ux.append(random.randint(-width/10,width/10))
+    uy.append(0)
+
 while True:
     for i in range(N):
-        velocities[i][1] = gravity*Delta_t + velocities[i][1]
-        balls[i].setx(velocities[i][0]*Delta_t + balls[i].xcor())
-        balls[i].sety(velocities[i][1]*Delta_t + balls[i].ycor())
+        uy[i] += g*t
+        balls[i].setx(ux[i]*t + balls[i].xcor())
+        balls[i].sety(uy[i]*t + balls[i].ycor())
 
         if balls[i].ycor() < -height / 2 or balls[i].ycor() > height / 2:
-            velocities[i][1] = -velocities[i][1]
+            uy[i] = -uy[i]
         if balls[i].xcor() < -width / 2 or balls[i].xcor() > width / 2:
-            velocities[i][0] = -velocities[i][0]
+            ux[i] = -ux[i]
 
         # Check for collisions
         for j in range(N):
-            if abs(balls[i].xcor() - balls[j].xcor()) < 10 \
-                    and abs(balls[i].ycor() - balls[j].ycor()) < 10:
-                        vh = velocities[i]
-                        velocities[i] = velocities[j]
-                        velocities[j] = vh
+            if i != j and \
+            abs(balls[i].xcor() - balls[j].xcor()) < 10 and \
+            abs(balls[i].ycor() - balls[j].ycor()) < 10:
+                        uxh = ux[i]
+                        uyh = uy[i]
+                        ux[i] = ux[j]
+                        uy[i] = uy[j]
+                        ux[j] = uxh
+                        uy[j] = uyh
 
-    #update window
-    i=(i+1)%10
-    if not i:
         window.update()
+
+
+
