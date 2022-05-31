@@ -97,7 +97,7 @@ for i in range(N):
     balls[i].setx(random.randint(0,height / 4))
     balls[i].sety(random.randint(0,height / 4))ball = turtle.Turtle()
 
-# Earth's gravitational constant
+# Free fall acceleration -g
 g = -9.81
 
 # Timestep size

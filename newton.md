@@ -7,7 +7,7 @@ layout: default
 
 ## How to drop a ball *for real*
 
-The *equations of motion* are a set of formulas that enable us to describe the movement of an object. An object in free fall simply moves along a straight line since it is only driven by earth's gravitational force that accelerates the object by means of the  earth's gravitational constant $$g \sim 9.81 \frac{m}{s^2}$$. Therefore, we only need to consider the equations of motion for linear motion with constant acceleration.
+The *equations of motion* are a set of formulas that enable us to describe the movement of an object. An object in free fall simply moves along a straight line since it is only driven by gravity that accelerates the object by means of the  earth's gravitational constant $$g \sim 9.81 \frac{m}{s^2}$$. Therefore, we only need to consider the equations of motion for linear motions with constant acceleration.
 
 To describe the motion of an object in free fall, we consider the following values:
 - the initial velocity $$u$$ 
@@ -82,7 +82,7 @@ ball.penup()
 ball.color("red")
 ball.shape("circle")
 
-# Earth's gravitational constant
+# Free fall acceleration -g
 g = -9.81
 
 # Timestep size

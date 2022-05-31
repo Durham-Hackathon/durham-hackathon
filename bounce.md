@@ -71,14 +71,15 @@ ball.penup()
 ball.color("red")
 ball.shape("circle")
 
-# Earth's gravitational constant
+# Free fall acceleration -g
 g = -9.81
 
 # Timestep size
 t = 0.008
 
 # Starting velocity
-u = 0
+ux = 4
+uy = 2
 
 while True:
 	#TODO: Bounce the ball by replacing break with your own code
