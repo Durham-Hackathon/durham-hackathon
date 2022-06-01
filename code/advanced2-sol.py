@@ -6,7 +6,7 @@ width = 300
 height = 400
 window = turtle.Screen()
 window.setup(width, height)
-window.tracer(4)
+window.tracer(0)
 
 color = ["blue",
         "yellow",
@@ -28,14 +28,19 @@ color = ["blue",
         "gold",
         "gray"]
 
-N = 2 # Number of balls
+N = 10 # Number of balls
 balls = [] # A list to hold the balls
+mass = []  # A list to hold masses of the balls
 
 # Set up N balls and start them in random positions
 for i in range(N):
+    # Now the balls also have a mass
+    mass.append(random.randint(1,4))
+
     balls.append(turtle.Turtle())
     balls[i].penup()
     balls[i].shape("circle")
+    balls[i].shapesize(mass[i]**0.5)
     balls[i].color(color[i%len(color)])
 
     # Set random starting position
@@ -46,7 +51,7 @@ for i in range(N):
 g = -9.81
 
 # Timestep size
-t = 0.008
+t = 0.08
 
 # Starting velocity is now also a list, we need one velocity per ball
 ux = []
@@ -63,20 +68,30 @@ while True:
 
         if balls[i].ycor() < -height / 2 or balls[i].ycor() > height / 2:
             uy[i] = -uy[i]
+            uy[i] *= 0.99
         if balls[i].xcor() < -width / 2 or balls[i].xcor() > width / 2:
             ux[i] = -ux[i]
+            ux[i] *= 0.99
 
-        # Check for collisions
+        # Check for collisions, now we need to modify
         for j in range(N):
             if i != j and \
             abs(balls[i].xcor() - balls[j].xcor()) < 10 and \
             abs(balls[i].ycor() - balls[j].ycor()) < 10:
-                        uxh = ux[i]
-                        uyh = uy[i]
-                        ux[i] = ux[j]
-                        uy[i] = uy[j]
-                        ux[j] = uxh
-                        uy[j] = uyh
+                coeff1 = (mass[i] - mass[j]) / (mass[i] + mass[j])
+                coeff2 = 2 * mass[j] / (mass[i] + mass[j])
+                coeff3 = 2 * mass[i] / (mass[i] + mass[j])
+                coeff4 = (mass[j] - mass[i]) / (mass[i] + mass[j])
+                uxh = ux[i]
+                uyh = uy[i]
+                ux[i] = coeff1 * ux[i] + coeff2 * ux[j]
+                uy[i] = coeff1 * ux[i] + coeff2 * uy[j]
+                ux[j] = coeff3 *  uxh  + coeff4 * ux[j]
+                uy[j] = coeff3 *  uyh  + coeff4 * ux[j]
+                ux[i] *= 0.99
+                uy[i] *= 0.99
+                ux[j] *= 0.99
+                uy[j] *= 0.99
 
         window.update()
 

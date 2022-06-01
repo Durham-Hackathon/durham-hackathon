@@ -5,6 +5,7 @@ width = 300
 height = 400
 window = turtle.Screen()
 window.setup(width, height)
+window.tracer(0)
 
 ball = turtle.Turtle()
 ball.penup()
@@ -31,3 +32,4 @@ while True:
         uy = -uy
     if ball.xcor() < -width / 2 or ball.xcor() > width / 2:
         ux = -ux
+    window.update()

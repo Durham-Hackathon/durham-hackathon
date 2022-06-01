@@ -71,5 +71,3 @@ $$x(t+h) \sim x(t) + h\cdot v(t).$$
 Note that we need the velocity in order to compute the position.
 
 
-[Next step](/durham-hackathon/friction.html)
-

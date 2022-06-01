@@ -24,6 +24,14 @@ During this hackathon you will learn how to program your first numerical simulat
 ### Let's get real with some more advanced physics:
 
 6. [How to derive the equations of motion?](/durham-hackathon/motion-equations.html)
-<!--7. [What about friction?](/durham-hackathon/friction.html)-->
-<!--8. [How to "lose" energy?](/durham-hackathon/energy.html)-->
-7. [How about different masses?](/durham-hackathon/different-weight.html)
+7. [How to "lose" energy?](/durham-hackathon/energy.html)
+8. [How about different masses?](/durham-hackathon/different-weight.html)
+8. [How wrong is our simulation?](/durham-hackathon/stability.html)
+9. Beyond these ideas there's many more physical effects you could take into account in your simulation, e.g. spin of the ball, friction. You can have a look [here](https://en.wikipedia.org/wiki/Bouncing_ball) for more ideas.
+
+
+### Support
+
+If you get stuck at any point feel free to email us:
+- [Anne](mailto:anne.k.reinarz@durham.ac.uk) or
+- [Laura](mailto:laura.morgenstern@durham.ac.uk)

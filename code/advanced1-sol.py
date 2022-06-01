@@ -51,7 +51,7 @@ for i in range(N):
 g = -9.81
 
 # Timestep size
-t = 0.008
+t = 0.08
 
 # Starting velocity is now also a list, we need one velocity per ball
 ux = []
@@ -76,12 +76,16 @@ while True:
             if i != j and \
             abs(balls[i].xcor() - balls[j].xcor()) < 10 and \
             abs(balls[i].ycor() - balls[j].ycor()) < 10:
-                        uxh = ux[i]
-                        uyh = uy[i]
-                        ux[i] = mass[j]/mass[i] * ux[j]
-                        uy[i] = mass[j]/mass[i] * uy[j]
-                        ux[j] = mass[i]/mass[j] * uxh
-                        uy[j] = mass[i]/mass[j] * uyh
+                coeff1 = (mass[i] - mass[j]) / (mass[i] + mass[j])
+                coeff2 = 2 * mass[j] / (mass[i] + mass[j])
+                coeff3 = 2 * mass[i] / (mass[i] + mass[j])
+                coeff4 = (mass[j] - mass[i]) / (mass[i] + mass[j])
+                uxh = ux[i]
+                uyh = uy[i]
+                ux[i] = coeff1 * ux[i] + coeff2 * ux[j]
+                uy[i] = coeff1 * ux[i] + coeff2 * uy[j]
+                ux[j] = coeff3 *  uxh  + coeff4 * ux[j]
+                uy[j] = coeff3 *  uyh  + coeff4 * ux[j]
 
         window.update()
 

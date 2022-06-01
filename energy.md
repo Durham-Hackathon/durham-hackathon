@@ -2,32 +2,14 @@
 layout: default
 ---
 
-[Previous step](/durham-hackathon/many-balls.html)
+[Previous step](/durham-hackathon/different-weight.html)
 
-## How about different sizes of balls?
+## How about balls which aren't perfectly elastic?
 
-If we want balls of various sizes we need to consider which components of our simulation are affected by the mass of the ball. We know that (without friction) the weight does not affect the speed at which a ball falls. But what about the collisions? Here we have implicit assumption that the masses are the same. Why?
+A real ball will never be perfectly elastic. That means when it collides with something, the wall or another ball, it will lose some kinetic energy. This energy is lost for example as sound and heat. We can simulate this by reducing the velocity.
 
-We have used *conservation of momentum*, momentum is mass times velocity, so in a collision between ball $$i$$ and ball $$j$$
-
-$$m_i u_i + m_j u_j$$
-
-will remain constant. Similarly, we have *conservation of kinetic energy* telling us that
-
-$$\frac{1}{2} m_i v_i^2 + \frac{1}{2} m_j v_j^2$$
-
-will remain constant.
-
-In the previous steps we have simply canceled out the masses. Now we need to solve the equations with the masses still in there. After manipulating the equations for a while we get
-
-$$ \frac{m_i - m_j}{m_i+m_j} u_i + \frac{2m_j}{m_i+m_j} u_j$$
-
-and
-
-
-$$ \frac{2m_i}{m_i+m_j} u_j +  \frac{m_j - m_i}{m_i+m_j} u_i$$
-
-Trying adding these in to complete the simulation with different masses.
+- How does the simulation change when you change the loss of energy?
+- What numbers are actually realistic? Have a look [here](https://en.wikipedia.org/wiki/Coefficient_of_restitution) for numbers for some common materials.
 
 
 <html> 
@@ -146,7 +128,7 @@ while True:
         if balls[i].xcor() < -width / 2 or balls[i].xcor() > width / 2:
             ux[i] = -ux[i]
 
-        # Check for collisions, TODO: modify to account for the relative masses
+        # Check for collisions
         for j in range(N):
             if i != j and \
             abs(balls[i].xcor() - balls[j].xcor()) < 10 and \
@@ -172,7 +154,6 @@ while True:
 
 </html>
 
-Fancy a hint? You can find the solution [here](code/advanced1-sol.py).
-
+Fancy a hint? You can find the solution [here](code/advanced2-sol.py).
 
 
