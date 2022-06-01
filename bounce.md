@@ -101,9 +101,9 @@ You will need to introduce a second velocity component. So now you have $$v_ux$$
 
 Modify your while loop to include updates to the x-coordinate of the ball and the x velocity of the ball. Bear in mind that gravity does not act in the horizontal plane.
 
-You will need to know the location of the floor as well. At the top you will see the size of the screen being set to `width` and `height`. Use these for your checks. The canvas is centered at 0. That means the floor will be at `-height/2` and the ceiling at `height/2`. The walls area analogously at `-width/2` and `width/2`.
+You will need to know the location of the floor as well. At the top you will see the size of the screen being set to `width` and `height`. Use these for your checks. The canvas is centered at 0. That means the floor will be at `-height/2` and the ceiling at `height/2`. The walls are analogously at `-width/2` and `width/2`.
 
-To test these you need to modify the starting velocity which is currently set to 0 in x and y directions.
+To test these you need to modify the starting velocity which is currently set to 0 in $$x$$ and $$y$$ directions.
 
 Fancy a hint? You can find the solution [here](code/step3-sol.py).
 
