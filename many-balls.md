@@ -101,7 +101,7 @@ for i in range(N):
 g = -9.81
 
 # Timestep size
-t = 0.008
+t = 0.08
 
 # Starting velocity is now also a list, we need one velocity per ball
 ux = []
