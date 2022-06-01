@@ -12,11 +12,11 @@ ball.penup()
 ball.color("red")
 ball.shape("circle")
 
-# Earth's gravitational constant
+# Free fall acceleration
 g = -9.81
 
 # Timestep size
-t = 0.008
+t = 0.08
 
 # Starting velocity
 ux = 4
