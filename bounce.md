@@ -65,6 +65,7 @@ width = 300
 height = 400
 window = turtle.Screen()
 window.setup(width, height)
+window.tracer(0)
 
 ball = turtle.Turtle()
 ball.penup()
@@ -75,7 +76,7 @@ ball.shape("circle")
 g = -9.81
 
 # Timestep size
-t = 0.008
+t = 0.08
 
 # Starting velocity
 ux = 4
@@ -83,7 +84,8 @@ uy = 2
 
 while True:
 	#TODO: Bounce the ball by replacing break with your own code
-    break;
+	break;
+	window.update()
 </textarea><br /> 
 <button type="button" onclick="runit()">Run</button> 
 </form> 
