@@ -42,11 +42,11 @@ for i in range(N):
     balls[i].setx(random.randint(0,height / 4))
     balls[i].sety(random.randint(0,height / 4))
 
-# Earth's gravitational constant
+# Free fall acceleration
 g = -9.81
 
 # Timestep size
-t = 0.008
+t = 0.08
 
 # Starting velocity is now also a list, we need one velocity per ball
 ux = []
