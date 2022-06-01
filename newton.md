@@ -81,12 +81,18 @@ ball = turtle.Turtle()
 ball.penup()
 ball.color("red")
 ball.shape("circle")
+	
+width = 300
+height = 400
+window = turtle.Screen()
+window.setup(width, height)
+window.tracer(0)
 
 # Free fall acceleration -g
 g = -9.81
 
 # Timestep size
-t = 0.008
+t = 0.08
 
 # Starting velocity
 u = 0
@@ -94,6 +100,7 @@ u = 0
 while True:
 	#TODO: Drop the ball by replacing "break" with your own code
 	break;
+	window.update()
 </textarea><br /> 
 <button type="button" onclick="runit()">Run</button> 
 </form> 
