@@ -26,4 +26,4 @@ During this hackathon you will learn how to program your first numerical simulat
 6. [How to derive the equations of motion?](/durham-hackathon/motion-equations.html)
 <!--7. [What about friction?](/durham-hackathon/friction.html)-->
 <!--8. [How to "lose" energy?](/durham-hackathon/energy.html)-->
-<!--9. [How about different masses?](/durham-hackathon/mass.html)-->
+7. [How about different masses?](/durham-hackathon/different-weight.html)

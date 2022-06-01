@@ -2,16 +2,20 @@
 layout: default
 ---
 
-[Previous step](/durham-hackathon/bounce.html)
+[Previous step](/durham-hackathon/many-balls.html)
 
-## How to bounce a whole lot of balls
+## How about different sizes of balls?
 
-Can we simulate many balls? Of course we can. We only need an extra loop that runs over all the balls.
+If we want balls of various sizes we need to consider which components of our simulation are affected by the mass of the ball. We know that (without friction) the weight does not affect the speed at which a ball falls. But what about the collisions? Here we have implicit assumption that the masses are the same. Why?
 
-We should then check if they have collided and bounce back if they have.
+We have used *conservation of momentum*, momentum is mass times velocity, so in a collision between ball $$i$$ and ball $$j$$
+
+$$m_i u_i = m_j u_j$$
+
+And in the previous steps we have simply canceled out the masses. Now we need to put them back in.
 
 <html> 
-<head> 
+<head>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js" type="text/javascript"></script> 
 <script src="js/skulpt.min.js" type="text/javascript"></script> 
 <script src="js/skulpt-stdlib.js" type="text/javascript"></script> 
@@ -85,19 +89,24 @@ color = ["blue",
 
 N = 10 # Number of balls
 balls = [] # A list to hold the balls
+mass = []  # A list to hold masses of the balls
 
 # Set up N balls and start them in random positions
 for i in range(N):
+    # Now the balls also have a mass
+    mass.append(random.randint(1,4))
+
     balls.append(turtle.Turtle())
     balls[i].penup()
     balls[i].shape("circle")
+    balls[i].shapesize(mass[i]**0.5)
     balls[i].color(color[i%len(color)])
 
     # Set random starting position
     balls[i].setx(random.randint(0,height / 4))
-    balls[i].sety(random.randint(0,height / 4))ball = turtle.Turtle()
+    balls[i].sety(random.randint(0,height / 4))
 
-# Free fall acceleration -g
+# Earth's gravitational constant
 g = -9.81
 
 # Timestep size
@@ -107,14 +116,35 @@ t = 0.008
 ux = []
 uy = []
 for i in range(N):
-    ux.append(0)
+    ux.append(random.randint(-width/10,width/10))
     uy.append(0)
 
 while True:
     for i in range(N):
-        break;
+        uy[i] += g*t
+        balls[i].setx(ux[i]*t + balls[i].xcor())
+        balls[i].sety(uy[i]*t + balls[i].ycor())
+
+        if balls[i].ycor() < -height / 2 or balls[i].ycor() > height / 2:
+            uy[i] = -uy[i]
+        if balls[i].xcor() < -width / 2 or balls[i].xcor() > width / 2:
+            ux[i] = -ux[i]
+
+        # Check for collisions, TODO: modify to account for the relative masses
+        for j in range(N):
+            if i != j and \
+            abs(balls[i].xcor() - balls[j].xcor()) < 10 and \
+            abs(balls[i].ycor() - balls[j].ycor()) < 10:
+                        uxh = ux[i]
+                        uyh = uy[i]
+                        ux[i] = ux[j]
+                        uy[i] = uy[j]
+                        ux[j] = uxh
+                        uy[j] = uyh
+
         window.update()
-    break;
+
+
 </textarea><br /> 
 <button type="button" onclick="runit()">Run</button> 
 </form> 
@@ -126,33 +156,7 @@ while True:
 
 </html>
 
-
-At this point you can either move on to the more advanced topics listed in the index or you can customise your simulation.
-
-The easiest thing to start with is changing the colors. Pick your own in the list. The list is not exhaustive, there are other colors you could add. Or you can change the order of the list, with a few balls only the first colors are used.
-
-The next thing is to change the shape of the ball. Perhaps you would prefer to show squares? Or turtles?
-- Options: `arrow`, `turtle`, `circle`, `square`, `triangle`, `classic`
-- You can also make your own shape by passing in nodes of a polygon:
-      s = Shape("compound")  
-      
-      poly1 = ((0,0),(10,-5),(0,10),(-10,-5))  
-
-      s.addcomponent(poly1, "red", "blue")  
-
-      poly2 = ((0,0),(10,-5),(-10,-5))  
-
-      s.addcomponent(poly2, "blue", "red")  
-      
-  Then register your new shape `register_shape("myshape", s)` and set it using `ball.shape("myshape")` as before.
-
-You can even change the background color by setting the background color
-``window.bgcolor("orange")``
-
-For the documentation explaining all the options the turtle library provides look [here](https://docs.python.org/3/library/turtle.html#). Like many python projects, turtle is well-documented.
-
-
-Fancy a hint? You can find the solution [here](code/step4-sol.py).
+Fancy a hint? You can find the solution [here](code/advanced1-sol.py).
 
 
 
