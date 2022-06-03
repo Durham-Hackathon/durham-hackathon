@@ -68,10 +68,11 @@ while True:
 
         if balls[i].ycor() < -height / 2 or balls[i].ycor() > height / 2:
             uy[i] = -uy[i]
-            uy[i] *= 0.99
+            balls[i].sety(balls[i].ycor() - t*t*g)
+            uy[i] *= 0.96
         if balls[i].xcor() < -width / 2 or balls[i].xcor() > width / 2:
             ux[i] = -ux[i]
-            ux[i] *= 0.99
+            ux[i] *= 0.96
 
         # Check for collisions, now we need to modify
         for j in range(N):
@@ -85,15 +86,15 @@ while True:
                 uxh = ux[i]
                 uyh = uy[i]
                 ux[i] = coeff1 * ux[i] + coeff2 * ux[j]
-                uy[i] = coeff1 * ux[i] + coeff2 * uy[j]
+                uy[i] = coeff1 * uy[i] + coeff2 * uy[j]
                 ux[j] = coeff3 *  uxh  + coeff4 * ux[j]
-                uy[j] = coeff3 *  uyh  + coeff4 * ux[j]
-                ux[i] *= 0.99
-                uy[i] *= 0.99
-                ux[j] *= 0.99
-                uy[j] *= 0.99
+                uy[j] = coeff3 *  uyh  + coeff4 * uy[j]
+                ux[i] *= 0.96
+                uy[i] *= 0.96
+                ux[j] *= 0.96
+                uy[j] *= 0.96
 
-        window.update()
+    window.update()
 
 
 

@@ -68,6 +68,7 @@ while True:
 
         if balls[i].ycor() < -height / 2 or balls[i].ycor() > height / 2:
             uy[i] = -uy[i]
+            balls[i].sety(balls[i].ycor() - t*t*g)
         if balls[i].xcor() < -width / 2 or balls[i].xcor() > width / 2:
             ux[i] = -ux[i]
 
@@ -83,11 +84,11 @@ while True:
                 uxh = ux[i]
                 uyh = uy[i]
                 ux[i] = coeff1 * ux[i] + coeff2 * ux[j]
-                uy[i] = coeff1 * ux[i] + coeff2 * uy[j]
+                uy[i] = coeff1 * uy[i] + coeff2 * uy[j]
                 ux[j] = coeff3 *  uxh  + coeff4 * ux[j]
-                uy[j] = coeff3 *  uyh  + coeff4 * ux[j]
+                uy[j] = coeff3 *  uyh  + coeff4 * uy[j]
 
-        window.update()
+    window.update()
 
 
 

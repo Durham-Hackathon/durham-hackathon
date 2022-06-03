@@ -28,7 +28,7 @@ color = ["blue",
         "gold",
         "gray"]
 
-N = 2 # Number of balls
+N = 6 # Number of balls
 balls = [] # A list to hold the balls
 
 # Set up N balls and start them in random positions
@@ -63,6 +63,7 @@ while True:
 
         if balls[i].ycor() < -height / 2 or balls[i].ycor() > height / 2:
             uy[i] = -uy[i]
+            balls[i].sety(balls[i].ycor() - t*t*g)
         if balls[i].xcor() < -width / 2 or balls[i].xcor() > width / 2:
             ux[i] = -ux[i]
 
@@ -78,7 +79,7 @@ while True:
                         ux[j] = uxh
                         uy[j] = uyh
 
-        window.update()
+    window.update()
 
 
 

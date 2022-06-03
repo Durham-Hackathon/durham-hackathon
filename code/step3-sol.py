@@ -19,8 +19,8 @@ g = -9.81
 t = 0.08
 
 # Starting velocity
-ux = 4
-uy = 2
+ux = 0.5
+uy = 0
 
 while True:
     uy += g*t  # update velocity in-place
@@ -30,6 +30,7 @@ while True:
 
     if ball.ycor() < -height / 2 or ball.ycor() > height / 2:
         uy = -uy
+        ball.sety(ball.ycor() - t*t*g)
     if ball.xcor() < -width / 2 or ball.xcor() > width / 2:
         ux = -ux
     window.update()
