@@ -12,6 +12,13 @@ So the ball needs to change direction, or in other words, the velocity of the ba
 
 $$v \rightarrow -v$$
 
+In order to keep the momentum we also need to modify the position in y slightly (we want to bounce of the actual wall not somewhere slightly below it):
+
+$$y \rightarrow y - g t^2$
+
+You will need to know the location of the floor as well. At the top you will see the size of the screen being set to `width` and `height`. Use these for your checks. The canvas is centered at 0. That means the floor will be at `-height/2` and the ceiling at `height/2`. The walls are analogously at `-width/2` and `width/2`.
+
+
 <html> 
 <head> 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js" type="text/javascript"></script> 
@@ -79,13 +86,12 @@ g = -9.81
 t = 0.08
 
 # Starting velocity
-ux = 4
-uy = 2
+u = 0
 
 while True:
 	#TODO: Bounce the ball by replacing break with your own code
-	break;
 	window.update()
+    break;
 </textarea><br /> 
 <button type="button" onclick="runit()">Run</button> 
 </form> 
@@ -102,8 +108,6 @@ After you've got it bouncing off the floor introduce a ceiling and walls. The ba
 You will need to introduce a second velocity component. So now you have $$v_ux$$ and $$u_y$$ giving the x and y components of the velocity. To bounce off a ceiling or floor we modify the y component of the velocity, to bounce off of a wall we modify the x component.
 
 Modify your while loop to include updates to the x-coordinate of the ball and the x velocity of the ball. Bear in mind that gravity does not act in the horizontal plane.
-
-You will need to know the location of the floor as well. At the top you will see the size of the screen being set to `width` and `height`. Use these for your checks. The canvas is centered at 0. That means the floor will be at `-height/2` and the ceiling at `height/2`. The walls are analogously at `-width/2` and `width/2`.
 
 To test these you need to modify the starting velocity which is currently set to 0 in $$x$$ and $$y$$ directions.
 

@@ -10,6 +10,10 @@ Can we simulate many balls? Of course we can. We only need an extra loop that ru
 
 We should then check if they have collided and bounce back if they have.
 
+This requires two loops, one loop over all balls to update their velocities and positions, and a second loop to check for collisions. Note that there are ways of making this computation more efficient, but for now two for loops will be fine.
+
+The new velocities after a collision of two balls are calculated using conservation of momentum, so the new velocity of the first ball should be the old velocity of the second, and vice versa.
+
 <html> 
 <head> 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js" type="text/javascript"></script> 
@@ -95,7 +99,7 @@ for i in range(N):
 
     # Set random starting position
     balls[i].setx(random.randint(0,height / 4))
-    balls[i].sety(random.randint(0,height / 4))ball = turtle.Turtle()
+    balls[i].sety(random.randint(0,height / 4))
 
 # Free fall acceleration -g
 g = -9.81
@@ -113,8 +117,7 @@ for i in range(N):
 while True:
     for i in range(N):
         break;
-        window.update()
-    break;
+    window.update()
 </textarea><br /> 
 <button type="button" onclick="runit()">Run</button> 
 </form> 

@@ -40,9 +40,12 @@ You may also want to install python and run these files outside of the browser. 
         global running
         running = False
     window.getcanvas().winfo_toplevel().protocol("WM_DELETE_WINDOW", on_close)
-    turtle.setworldcoordinates(0, 0, width, height)
 
+And instead of running a loop `while True` run 
 
+    running = False
+    while running:
+        # Your code here
 
 
 
