@@ -14,7 +14,7 @@ $$m_i u_i + m_j u_j$$
 
 will remain constant. Similarly, we have *conservation of kinetic energy* telling us that
 
-$$\frac{1}{2} m_i v_i^2 + \frac{1}{2} m_j v_j^2$$
+$$\frac{1}{2} m_i u_i^2 + \frac{1}{2} m_j u_j^2$$
 
 will remain constant.
 
@@ -27,7 +27,7 @@ and
 
 $$ \frac{2m_i}{m_i+m_j} u_j +  \frac{m_j - m_i}{m_i+m_j} u_i$$
 
-Trying adding these in to complete the simulation with different masses.
+Try adding these in to complete the simulation with different masses.
 
 
 <html> 
