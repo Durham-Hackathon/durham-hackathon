@@ -14,7 +14,7 @@ $$v \rightarrow -v$$
 
 In order to keep the momentum we also need to modify the position in y slightly (we want to bounce of the actual wall not somewhere slightly below it):
 
-$$y \rightarrow y - g t^2$
+$$y \rightarrow y - g t^2$$
 
 You will need to know the location of the floor as well. At the top you will see the size of the screen being set to `width` and `height`. Use these for your checks. The canvas is centered at 0. That means the floor will be at `-height/2` and the ceiling at `height/2`. The walls are analogously at `-width/2` and `width/2`.
 
