@@ -90,8 +90,9 @@ u = 0
 
 while True:
 	#TODO: Bounce the ball by replacing break with your own code
+	break;
 	window.update()
-    break;
+
 </textarea><br /> 
 <button type="button" onclick="runit()">Run</button> 
 </form> 
