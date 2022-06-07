@@ -105,9 +105,9 @@ while True:
 
 After you've got it bouncing off the floor introduce a ceiling and walls. The ball should bounce of the ceiling and the walls in the same way as it does off the floor. What do you need to change? What remains the same?
 
-You will need to introduce a second velocity component. So now you have $$v_ux$$ and $$u_y$$ giving the x and y components of the velocity. To bounce off a ceiling or floor we modify the y component of the velocity, to bounce off of a wall we modify the x component.
+You will need to introduce a second velocity component. So now you have $$v_x$$ and $$v_y$$ giving the $$x$$ and $$y$$ components of the velocity. To bounce off a ceiling or floor we modify the $$y$$ component of the velocity, to bounce off of a wall we modify the $$x$$ component.
 
-Modify your while loop to include updates to the x-coordinate of the ball and the x velocity of the ball. Bear in mind that gravity does not act in the horizontal plane.
+Modify your while loop to include updates to the $$x$$-coordinate of the ball and the $$x$$ velocity of the ball. Bear in mind that gravity does not act in the horizontal plane.
 
 To test these you need to modify the starting velocity which is currently set to 0 in $$x$$ and $$y$$ directions.
 
