@@ -116,7 +116,7 @@ for i in range(N):
 
 while True:
     for i in range(N):
-        break;
+        break
     window.update()
 </textarea><br /> 
 <button type="button" onclick="runit()">Run</button> 
