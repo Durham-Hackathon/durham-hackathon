@@ -1,15 +1,15 @@
 import turtle
 
-ball = turtle.Turtle()
-ball.penup()
-ball.color("red")
-ball.shape("circle")
-
 width = 300
 height = 400
 window = turtle.Screen()
 window.setup(width, height)
 window.tracer(0)
+
+ball = turtle.Turtle()
+ball.penup()
+ball.color("red")
+ball.shape("circle")
 
 # Free fall acceleration
 g = -9.81
