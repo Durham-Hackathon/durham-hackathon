@@ -64,7 +64,7 @@ ball.shape("circle")
 
 while True:
 	#TODO: Drop the ball by replacing "break" with your own code
-	break;
+	break
 </textarea><br /> 
 <button type="button" onclick="runit()">Run</button> 
 </form>
