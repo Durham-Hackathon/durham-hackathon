@@ -11,7 +11,7 @@ The *equations of motion* are a set of formulas that enable us to describe the m
 
 To describe the motion of an object in free fall, we consider the following values:
 - the initial velocity $$u$$ 
-- the constant acceleration $$g$$
+- the constant free fall acceleration $$-g$$
 - a time $$t$$, meaning, the duration of the motion
 - a distance $$s$$, meaning, how far the object moves
 
@@ -76,17 +76,17 @@ function runit() {
 <form> 
 <textarea id="newton-code" cols="90" rows="15" onkeydown="if(event.keyCode===9){var v=this.value,s=this.selectionStart,e=this.selectionEnd;this.value=v.substring(0, s)+'\t'+v.substring(e);this.selectionStart=this.selectionEnd=s+1;return false;}">
 import turtle
-
-ball = turtle.Turtle()
-ball.penup()
-ball.color("red")
-ball.shape("circle")
 	
 width = 300
 height = 400
 window = turtle.Screen()
 window.setup(width, height)
 window.tracer(0)
+
+ball = turtle.Turtle()
+ball.penup()
+ball.color("red")
+ball.shape("circle")
 
 # Free fall acceleration -g
 g = -9.81
@@ -99,7 +99,7 @@ u = 0
 
 while True:
 	#TODO: Drop the ball by replacing "break" with your own code
-	break;
+	break
 	window.update()
 </textarea><br /> 
 <button type="button" onclick="runit()">Run</button> 
