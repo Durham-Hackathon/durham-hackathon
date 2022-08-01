@@ -4,30 +4,32 @@ layout: default
 
 [Previous step](/durham-hackathon/many-balls.html)
 
-## How about different sizes of balls?
+## How about different masses of balls?
 
-If we want balls of various sizes we need to consider which components of our simulation are affected by the mass of the ball. We know that (without friction) the weight does not affect the speed at which a ball falls. But what about the collisions? Here we have implicit assumption that the masses are the same. Why?
+If we want balls of various masses we need to consider which components of our simulation are affected by the mass of the ball. We know that (without friction) the weight does not affect the speed at which a ball falls. But what about the collisions? 
 
-We have used *conservation of momentum*, momentum is mass times velocity, so in a collision between ball $$i$$ and ball $$j$$
+The momentum $p$ of an object is defined as $p = m v$. For collisions, the law of *conservation of momentum* holds.  This means that the momentum of all balls before the collision equals the momentum of all balls after the collision. Hence, in a collision between ball $$i$$ and ball $$j$$
 
-$$m_i u_i + m_j u_j$$
+$$m_i u_i + m_j u_j = m_i v_i + m_j v_j$$
 
-will remain constant. Similarly, we have *conservation of kinetic energy* telling us that
+holds, with $u_i, u_j$ and $v_i, v_j$ being the velocities before and after the collision, respectively. 
 
-$$\frac{1}{2} m_i u_i^2 + \frac{1}{2} m_j u_j^2$$
+Similarly, the *conservation of kinetic energy* 
 
-will remain constant.
+$$\frac{1}{2} m_i u_i^2 + \frac{1}{2} m_j u_j^2 = \frac{1}{2} m_i v_i^2 + \frac{1}{2} m_j v_j^2$$
 
-In the previous steps we have simply canceled out the masses. Now we need to solve the equations with the masses still in there. After manipulating the equations for a while we get
+holds.
 
-$$ \frac{m_i - m_j}{m_i+m_j} u_i + \frac{2m_j}{m_i+m_j} u_j$$
+In the previous steps we have implicitly assumed that all balls are equal in mass, which simply canceled out the masses. Now we need to solve the equations with the masses still in there. After manipulating the equations for a while we get
+
+$$ v_i = \frac{m_i - m_j}{m_i+m_j} u_i + \frac{2m_j}{m_i+m_j} u_j$$
 
 and
 
 
-$$ \frac{2m_i}{m_i+m_j} u_j +  \frac{m_j - m_i}{m_i+m_j} u_i$$
+$$ v_j = \frac{2m_i}{m_i+m_j} u_j +  \frac{m_j - m_i}{m_i+m_j} u_i$$
 
-Try adding these in to complete the simulation with different masses.
+Try adding these to complete the simulation with different masses.
 
 
 <html> 
