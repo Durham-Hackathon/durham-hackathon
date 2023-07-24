@@ -34,4 +34,5 @@ During this hackathon you will learn how to program your first numerical simulat
 
 If you get stuck at any point feel free to email us:
 - [Anne](mailto:anne.k.reinarz@durham.ac.uk) or
+- [Chris](mailto:christopher.marcotte@durham.ac.uk) or
 - [Laura](mailto:laura.morgenstern@durham.ac.uk)
