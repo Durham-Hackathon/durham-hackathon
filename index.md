@@ -29,10 +29,10 @@ During this hackathon you will learn how to program your first numerical simulat
 8. [How wrong is our simulation?](/durham-hackathon/stability.html)
 9. Beyond these ideas there's many more physical effects you could take into account in your simulation, e.g. spin of the ball, friction. You can have a look [here](https://en.wikipedia.org/wiki/Bouncing_ball) for more ideas.
 
+### Acknowledgement 
+This is a slightly modified hackathon first prepared by Anne Reinarz, Chris Marcotte, and Laura Morgenstern.
 
 ### Support
 
-If you get stuck at any point feel free to email us:
-- [Anne](mailto:anne.k.reinarz@durham.ac.uk) or
-- [Chris](mailto:christopher.marcotte@durham.ac.uk) or
-- [Laura](mailto:laura.morgenstern@durham.ac.uk)
+If you get stuck at any point feel free to email: 
+- [Chung](mailto:chung.m.loi@durham.ac.uk)
