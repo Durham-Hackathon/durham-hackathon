@@ -92,15 +92,15 @@ balls = [] # A list to hold the balls
 
 # Set up N balls with radius 10 and start them in random positions
 for i in range(N):
-  balls.append(turtle.Turtle())
-  balls[i].circle(10)
-  balls[i].penup()
-  balls[i].shape("circle")
-  balls[i].color(color[i%len(color)])
+    balls.append(turtle.Turtle())
+    balls[i].circle(10)
+    balls[i].penup()
+    balls[i].shape("circle")
+    balls[i].color(color[i%len(color)])
 
-  # Set random starting position
-  balls[i].setx(random.randint(0,height / 4))
-  balls[i].sety(random.randint(0,height / 4))
+    # Set random starting position
+    balls[i].setx(random.randint(0,height / 4))
+    balls[i].sety(random.randint(0,height / 4))
 
 # Free fall acceleration -g
 g = -9.81
@@ -112,13 +112,13 @@ t = 0.08
 ux = []
 uy = []
 for i in range(N):
-  ux.append(0)
-  uy.append(0)
+    ux.append(0)
+    uy.append(0)
 
 while True:
-  for i in range(N):
-    break
-  window.update()
+    for i in range(N):
+        break
+    window.update()
 </textarea><br /> 
 <button type="button" onclick="runit()">Run</button> 
 </form> 
